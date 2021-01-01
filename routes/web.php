@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\FileUploadController;
 
 /*
 |--------------------------------------------------------------------------
@@ -12,6 +13,10 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+Route::view('/file-upload','upload');
+Route::post('/file-upload', [FileUploadController::class, 'store']);
+Route::get('/view-uploads', [FileUploadController::class, 'index']);
 
 Route::get('/', function () {
     return view('welcome');

@@ -13,8 +13,10 @@ class CreateFileTable extends Migration
      */
     public function up()
     {
-        Schema::create('products', function (Blueprint $table) {
+        Schema::create('files', function (Blueprint $table) {
             $table->id();
+            $table->string('name', 40);
+            $table->string('url', 255);
             $table->timestamps();
         });
     }
